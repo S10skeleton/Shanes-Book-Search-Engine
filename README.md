@@ -20,29 +20,14 @@ These instructions will get you a copy of the project up and running on your loc
 - MongoDB
 - npm or yarn package manager
 
-### Installing
 
-1. Clone the repository to your local machine:
-git clone https://github.com/yourusername/Shanes-Book-Search-Engine.git
+## Deployment and Repo
 
-2. Navigate to the project directory:
+This application is deployed on Render: https://book-search-engine-yvby.onrender.com 
 
-cd Shanes-Book-Search-Engine
+Github Repo: https://github.com/S10skeleton/Shanes-Book-Search-Engine 
 
 
-3. Install the necessary packages:
-
-npm install
-
-4. Start the server:
-
-npm start
-
-5. Navigate to `http://localhost:3000` in your browser to view the application.
-
-## Deployment
-
-This application is deployed on Render. Follow the guidelines provided in the "Deploy with Render and MongoDB Atlas walkthrough" to deploy your version of the application.
 
 ## Built With
 
