@@ -21,7 +21,6 @@
     
   },
   "devDependencies": {
-    "nodemon": "^2.0.3",
-    "vite": "^5.2.6"
+    "nodemon": "^2.0.3"
   }
 }
