@@ -1,12 +1,27 @@
 import './App.css';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { Outlet } from 'react-router-dom';
-
-
 import Navbar from './components/Navbar';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, from } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+const httpLink = createHttpLink({
+  uri: 'https://book-search-engine-yvby.onrender.com/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  console.log('Token:', token); // Add this to debug
+
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    }
+  }
+});
 
 const client = new ApolloClient({
-  uri: 'https://book-search-engine-yvby.onrender.com/graphql', // Replace with your GraphQL server URI
+  link: from([authLink, httpLink]),
   cache: new InMemoryCache(),
 });
 
@@ -20,3 +35,4 @@ function App() {
 }
 
 export default App;
+
