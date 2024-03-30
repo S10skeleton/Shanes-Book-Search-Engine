@@ -1,20 +1,26 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
-export const QUERY_USER = gql`
-  {
+
+export const GET_ME = gql`
+{
     me {
       _id
       username
       email
       bookCount
       savedBooks {
+        # _id
         bookId
         authors
         image
-        description
-        title
         link
+        title
+        description
       }
     }
   }
 `;
+
+
+
+
